@@ -1,0 +1,52 @@
+
+<!-- bloque de directivas de atributo
+-->
+<h3 [ngStyle]="{color: 'tomato', fontWeight:'bolder'}">kakaroto desde otro modulo</h3>
+<h3 ngClass="underline">e morro</h3>
+<h2 [ngClass]="['underline','small']"> este dia es chingon</h2>
+<h2 [ngClass]="{underline:false, small:true}"> este dia es chingon xd 33</h2>
+<!-- bloque directicas estructurales -->
+
+<button (click)="cambiarCargando()">{{cargando? 'terminar carga':'iniciar carga'}}</button>
+<!-- condicional  -->
+<ng-container *ngIf="!cargando;else templateEspera">
+    <p>todo listo</p>
+</ng-container>
+
+<ng-template #templateEspera>
+    <p>cargando..</p>
+    <p>espere penfo</p>
+</ng-template>
+<!-- bucle for -->
+<div *ngFor="let producto of listaProductos; let i=index; let even = even">
+    <div [ngStyle]="even?{backgroundColor:'black',color:'white'}:{backgroundColor:'grey',color:'white'}">
+        <p>id: {{i +1}}</p>
+        <p>{{producto.nombre}}</p>
+        <p>{{producto.precio}}</p>
+        <p>{{producto.descricion}}</p>
+    </div>
+</div>
+<!-- usando swich -->
+<div [ngSwitch]="opcion">
+    <p [id]="1" *ngSwitchCase="1">escogiste opcion 1</p>
+    <p [id]="2" *ngSwitchCase="2">escogiste opcion 2</p>
+    <p [id]="3" *ngSwitchCase="3">escogiste opcion 3</p>
+    <p [id]="4" *ngSwitchCase="4">escogiste opcion 4</p>
+    <p *ngSwitchDefault class="cerrar"></p>
+</div>
+<div>
+    <input type="radio" name="opcion" id="" (click)="escogerOpcion(1)"> opcion 1
+    <input type="radio" name="opcion" id="" (click)="escogerOpcion(2)"> opcion 2
+    <input type="radio" name="opcion" id="" (click)="escogerOpcion(3)"> opcion 3
+    <input type="radio" name="opcion" id="" (click)="escogerOpcion(4)"> opcion 4
+    <input type="radio" selected="selected" name="opcion" id="" (click)="escogerOpcion(0)"> ocultar
+</div>
+<!-- como for e if -->
+<div *ngFor="let producto of listaProductos; let i=index; let even = even">
+    <div *ngIf="producto.precio>210" [ngStyle]="even?{backgroundColor:'black',color:'white'}:{backgroundColor:'grey',color:'white'}">
+        <p>id: {{i +1}}</p>
+        <p>{{producto.nombre}}</p>
+        <p>{{producto.precio}}</p>
+        <p>{{producto.descricion}}</p>
+    </div>
+</div>
