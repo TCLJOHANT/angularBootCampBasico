@@ -1,17 +1,4 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-
-  <div class="content" role="main">
-    <div class="card highlight-card card-small">
-      <!-- ng model pasa variable a vista, pero tambien escucha el valor digitado de la vista 
-      se conoce como two-way binding" o "enlace bidireccional"-->
-      <input type="text" placeholder="nombre usuario" [(ngModel)]="nombre">
-      <!-- pasando variable al componente saludar  -->
-      <!-- (mensajeEmitter)="recibirMensajeHijo($event)"recibe el evento del hijo (texto) luego ese evento pasa a la funcion 
-        recibirMensaeHijo el cual la alerta -->
-  
-      <app-saludar [nombre]="nombre" (mensajeEmitter)="recibirMensajeHijo($event)"></app-saludar>
-    </div>
-</div>
-
-
+<!-- eliminar homespage a partir de  route outline -->
+<app-home-page></app-home-page>
+<!-- TODO:renderiza lo que le indique el routeModule a partir de url en que estamos -->
+<!-- <router-outlet></router-outlet> -->
