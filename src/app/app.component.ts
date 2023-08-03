@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularBotcampBas';
+  nombre = 'Kakaroto';
+  //recibe lo que el componente hijo envia
+  recibirMensajeHijo(mensaje:String){
+    alert(mensaje);
+  }
 }
