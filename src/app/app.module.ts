@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { SaludarComponent } from './components/saludar/saludar.component';
 import { FormsModule } from '@angular/forms';
 import { ListsModule } from './modules/lists/list.module';
-import { ListaContactoComponent } from './components/lista-contacto/lista-contacto.component'; //mi modulo peronalizado
+import { ListaContactoComponent } from './components/lista-contacto/lista-contacto.component';
+import { LoginFormComponent } from './components/forms/login-form/login-form.component'; //mi modulo peronalizado
 
 @NgModule({
   declarations: [
     AppComponent,
     SaludarComponent,
-    ListaContactoComponent
+    ListaContactoComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
