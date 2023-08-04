@@ -2,23 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { SaludarComponent } from './components/saludar/saludar.component';
 import { FormsModule } from '@angular/forms';
-import { ListsModule } from './modules/lists/list.module';
-import { ListaContactoComponent } from './components/lista-contacto/lista-contacto.component';
-import { LoginFormComponent } from './components/forms/login-form/login-form.component'; //mi modulo peronalizado
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SaludarComponent,
-    ListaContactoComponent,
-    LoginFormComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ListsModule, //importo mi propio modulo
     HttpClientModule, //para hacer peticiones http
   ],
   providers: [],

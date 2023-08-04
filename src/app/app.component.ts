@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AngularBotcampBas';
-  nombre = 'Kakaroto';
-  //recibe lo que el componente hijo envia
-  recibirMensajeHijo(mensaje:String){
-    alert(mensaje);
-  }
+  title:String = ''
 }
