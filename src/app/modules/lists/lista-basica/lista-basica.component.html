@@ -41,7 +41,7 @@
     <input type="radio" name="opcion" id="" (click)="escogerOpcion(4)"> opcion 4
     <input type="radio" selected="selected" name="opcion" id="" (click)="escogerOpcion(0)"> ocultar
 </div>
-<!-- como for e if -->
+ como for e if 
 <div *ngFor="let producto of listaProductos; let i=index; let even = even">
     <div *ngIf="producto.precio>210" [ngStyle]="even?{backgroundColor:'black',color:'white'}:{backgroundColor:'grey',color:'white'}">
         <p>id: {{i +1}}</p>

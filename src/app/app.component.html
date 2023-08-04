@@ -9,9 +9,11 @@
       <!-- pasando variable al componente saludar  -->
       <!-- (mensajeEmitter)="recibirMensajeHijo($event)"recibe el evento del hijo (texto) luego ese evento pasa a la funcion 
         recibirMensaeHijo el cual la alerta -->
-  
+       
       </div>
     </div>
     <app-saludar [nombre]="nombre" (mensajeEmitter)="recibirMensajeHijo($event)"></app-saludar>
-
-
+    <!-- ejemplo  -->
+    <div class="content" role="main">
+      <app-lista-contacto></app-lista-contacto>
+    </div>
