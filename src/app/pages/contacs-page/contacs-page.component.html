@@ -1,0 +1,8 @@
+<h1>Tus contactos:</h1>
+<!--  pintar ontactos y poder navegar en tre ellos -->
+<div class="" *ngFor="let contacto of contacts let i=index">
+    <div routerLink="{{contacto.id}}">
+        <p>'{{contacto.nombre}}</p>
+    </div>
+
+</div>
