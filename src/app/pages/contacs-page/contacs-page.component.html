@@ -1,8 +1,17 @@
 <h1>Tus contactos:</h1>
 <!--  pintar ontactos y poder navegar en tre ellos -->
-<div class="" *ngFor="let contacto of contacts let i=index">
-    <div routerLink="{{contacto.id}}">
-        <p>'{{contacto.nombre}}</p>
+<div class="" *ngFor="let contacto of listaContactos; let i=index">
+    <div routerLink="{{contacto.id}}" [state]="{data:contacto,filtro: filtroSexo}">
+        <p class="contacto">'{{contacto.nombre}}</p>
     </div>
-
+    <button (click)="volverAHome(contacto)">Enviar contacto por url</button>
 </div>
+
+<ng-container *ngIf="filtroSexo =='mujer' ||filtroSexo=='hombre';else completo">
+    <p>mostrando lista filtrada por: {{filtroSexo}}</p>
+
+</ng-container>
+<ng-template #completo>
+    <p>mostrando lista de contactos completa</p>
+</ng-template>
+<a href="" routerLink="/home">volver</a>
