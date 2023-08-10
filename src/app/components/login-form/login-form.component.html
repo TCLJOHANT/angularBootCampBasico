@@ -1,0 +1,35 @@
+<!-- montamos el login form usando components de angular material -->
+<mat-card>
+    <!-- cabecera -->
+    <mat-card-header>
+        <mat-card-title>
+            Loguin
+        </mat-card-title>
+        <mat-card-subtitle>
+            Acceder a tuc uenta
+        </mat-card-subtitle>
+    </mat-card-header>
+    <!-- contenido de la tarjeta -->
+    <mat-card-content>
+        <!-- form de login -->
+        <form [formGroup]="loginForm" (submit)="submitLogin()">
+            <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
+                    el campo Email es obligatorio
+                </mat-error>
+                <mat-error *ngIf="email?.errors?.['email'] && email?.touched">
+                    el formato de Email no es corecto
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="password" matInput placeholder="Password" formControlName="password">
+                <mat-error *ngIf="password?.errors?.['required'] && password?.touched">
+                    el campo Password es obligatorio
+                </mat-error>
+            </mat-form-field>
+            <!-- boton para hacer submit -->
+            <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
+        </form>
+    </mat-card-content>
+</mat-card>
