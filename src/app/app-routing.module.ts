@@ -6,6 +6,7 @@ import { ContacsPageComponent } from './pages/contacs-page/contacs-page.componen
 import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-detail-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { authGuard } from './guards/auth.guard';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 const routes: Routes = [
   //redirige ruta vacía a la ruta '/home'. Es decir, si se navega
@@ -41,6 +42,11 @@ const routes: Routes = [
     path:'contacts/:id',
     component:ContactDetailPageComponent,
     canActivate: [authGuard]
+  },
+  {
+    path:'random',
+    component:RandomContactPageComponent,
+    canActivate:[authGuard]
   },
   //Si el usuario navega a una ruta que no existe en la aplicación, se cargará el componente notfountPage
   {

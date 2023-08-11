@@ -12,9 +12,11 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { ContacsPageComponent } from './pages/contacs-page/contacs-page.component';
 import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-detail-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material/material.module';
+import { MaterialModule } from './modules/material/material.module'; // angular material 
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
+import { RandomUserComponent } from './components/random-user/random-user.component';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
     ContactDetailPageComponent,
     LoginFormComponent,
     NombreCompletoPipe,
+    RandomUserComponent,
+    RandomContactPageComponent,
 
   ],
   imports: [
@@ -36,7 +40,7 @@ import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
     HttpClientModule,//para hacer peticiones http
     BrowserAnimationsModule, 
     ReactiveFormsModule, //formularios reactivos
-    MaterialModule, //modulo Personalizado
+    MaterialModule, //modulo Personalizado (angular material)
   ],
   providers: [],
   bootstrap: [AppComponent]
