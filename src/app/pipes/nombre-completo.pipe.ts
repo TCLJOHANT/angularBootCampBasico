@@ -1,13 +1,12 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { IContacto } from '../models/contacto.interface';
+import { Pipe, PipeTransform } from '@angular/core';import { IRandomContact } from '../models/ramdomUser';
 
 @Pipe({
   name: 'nombreCompleto'
 })
 export class NombreCompletoPipe implements PipeTransform {
 
-  transform(contacto:IContacto, ...args: unknown[]):string{
-    return `${contacto.nombre} ${contacto.apellido}`;
+  transform(contacto:IRandomContact, ...args: unknown[]):string{
+    return `${contacto.name.title} ${contacto.name.first} ${contacto.name.last}`;
   }
 
 }

@@ -9,10 +9,10 @@ import { RandomUserService } from 'src/app/services/random-user.service';
 })
 export class RandomContactPageComponent implements OnInit {
   Contact:IRandomContact | undefined;
-  constructor(private randomUserSevice:RandomUserService){}
+  constructor(private randomUserService:RandomUserService){}
 
   obtenerNuevoContacto():void{
-    this.randomUserSevice.obtenerRandomContact().subscribe(
+    this.randomUserService.obtenerRandomContact().subscribe(
       {
          next: (response:Results)=>{
          this.Contact = response.results[0]; //se lo pasamos al randomUser
@@ -26,9 +26,9 @@ export class RandomContactPageComponent implements OnInit {
     this.obtenerNuevoContacto()
   }
   obtenerListaContactos(n:number){
-    this.randomUserSevice.obtenerRandomContacts(n).subscribe(
+    this.randomUserService.obtenerRandomContacts(n).subscribe(
       {
-         next: (response:Results[])=>{
+         next: (response:Results)=>{
           console.log(response)
          },
          error:(error)=> console.error(`${error}`),

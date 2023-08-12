@@ -22,18 +22,16 @@ export class RandomUserService {
       retry(2),//Nº de reitentos de peticiones
       catchError(this.handleError)) //sacamos error si algo falla 
   }
-   obtenerRandomContacts(n:number):Observable<Results[]>{
-      const params:HttpParams = new HttpParams().set("results",n)
-      return this.http.get<Results[]>(this.urlApi,{params:params}).pipe(
+   obtenerRandomContacts(n:number,sexo?:string):Observable<Results>{
+      let params:HttpParams = new HttpParams().set("results",n)
+      if(sexo){
+        params = params.append("gender",sexo);
+      }
+      return this.http.get<Results>(this.urlApi,{params:params}).pipe(
         retry(2),//Nº de reitentos de peticiones
         catchError(this.handleError)) //sacamos error si algo falla 
    }
 
-   obtenerRandomContactsPorGenero(sexo:string):Observable<Results>{
-    const params:HttpParams = new HttpParams().set("geners",sexo)
-    return this.http.get<Results>(this.urlApi,{params:params}).pipe(
-      retry(2),//Nº de reitentos de peticiones
-      catchError(this.handleError)) //sacamos error si algo falla 
-   }
+
 }
 
